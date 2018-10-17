@@ -1,0 +1,2 @@
+disabled_rules: [trailing_whitespace, fallthrough, line_length]
+included: [Core, OwoxCart]

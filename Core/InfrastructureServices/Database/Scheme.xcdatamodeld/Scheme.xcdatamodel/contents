@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Album" representedClassName="StoredAlbum" syncable="YES" codeGenerationType="class">
+        <attribute name="cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="isSingleTrack" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="permalink" attributeType="String" syncable="YES"/>
+        <relationship name="audioTracks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AudioTrack" inverseName="album" inverseEntity="AudioTrack" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AudioCategory" inverseName="albums" inverseEntity="AudioCategory" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="AudioCategory" representedClassName="StoredAudioCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Album" inverseName="categories" inverseEntity="Album" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="selectedCategories" inverseEntity="User" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="AudioTrack" representedClassName="StoredAudioTrack" syncable="YES" codeGenerationType="class">
+        <attribute name="audioURL" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="keyPairId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="policy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="audioTracks" inverseEntity="Album" syncable="YES"/>
+        <relationship name="likes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Like" inverseName="audiotrack" inverseEntity="Like" syncable="YES"/>
+        <relationship name="queueItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DailySyncItem" inverseName="track" inverseEntity="DailySyncItem" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="DailySyncItem" representedClassName="StoredDailySyncItem" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="elapsedTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isDone" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AudioTrack" inverseName="queueItem" inverseEntity="AudioTrack" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="dailySyncItems" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Like" representedClassName="StoredLike" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="isLiked" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="audiotrack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AudioTrack" inverseName="likes" inverseEntity="AudioTrack" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="likes" inverseEntity="User" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="User" representedClassName="StoredUser" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dailySyncItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DailySyncItem" inverseName="user" inverseEntity="DailySyncItem" syncable="YES"/>
+        <relationship name="likes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Like" inverseName="user" inverseEntity="Like" syncable="YES"/>
+        <relationship name="selectedCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AudioCategory" inverseName="users" inverseEntity="AudioCategory" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-54" positionY="9" width="128" height="150"/>
+        <element name="AudioCategory" positionX="-326" positionY="-36" width="128" height="120"/>
+        <element name="AudioTrack" positionX="180" positionY="-0" width="128" height="180"/>
+        <element name="DailySyncItem" positionX="-117" positionY="45" width="128" height="120"/>
+        <element name="User" positionX="-117" positionY="36" width="128" height="135"/>
+        <element name="Like" positionX="-117" positionY="54" width="128" height="120"/>
+    </elements>
+</model>

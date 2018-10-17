@@ -1,0 +1,79 @@
+PODS:
+  - Differentiator (3.1.0)
+  - EventsTree (1.0.0)
+  - Kingfisher (4.10.0)
+  - Reusable (4.0.4):
+    - Reusable/Storyboard (= 4.0.4)
+    - Reusable/View (= 4.0.4)
+  - Reusable/Storyboard (4.0.4)
+  - Reusable/View (4.0.4)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxOptional (3.5.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.3.1)
+  - RxViewController (0.3.0):
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
+  - SwiftGen (5.2.1)
+  - SwiftLint (0.27.0)
+  - Swinject (2.5.0)
+  - SwinjectAutoregistration (2.5.0):
+    - Swinject (~> 2.5)
+  - Unbox (3.0.0)
+
+DEPENDENCIES:
+  - EventsTree (~> 1.0)
+  - Kingfisher (~> 4.6)
+  - Reusable (~> 4.0)
+  - RxDataSources (~> 3.0)
+  - RxOptional (~> 3.5)
+  - RxSwift (~> 4.1)
+  - RxViewController (~> 0.3)
+  - SwiftGen (~> 5.2.1)
+  - SwiftLint (~> 0.25)
+  - Swinject (~> 2.5)
+  - SwinjectAutoregistration (~> 2.5)
+  - Unbox (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Differentiator
+    - EventsTree
+    - Kingfisher
+    - Reusable
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxSwift
+    - RxViewController
+    - SwiftGen
+    - SwiftLint
+    - Swinject
+    - SwinjectAutoregistration
+    - Unbox
+
+SPEC CHECKSUMS:
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  EventsTree: 137f90ebbfd9f3aa57040f4da972583d6196f0d0
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  Reusable: 7fc772097df3e5fc86f59d8a7af9708e49b5ff55
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxViewController: 203510707e73dd95f147f0c387710e3ec80d2b0f
+  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  SwinjectAutoregistration: 0502a16e5f5baf181be80dc9510e0efa29130485
+  Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
+
+PODFILE CHECKSUM: 95fb84b26bff02fc6ec7c5ce08c342ebfac545bc
+
+COCOAPODS: 1.5.3
