@@ -45,6 +45,8 @@ class CartController: UIViewController, DisposableFlowKeeper {
   @IBOutlet private weak var totalSumContainer: UIView!
   @IBOutlet private weak var emptyCartLabel: UILabel!
   
+  private weak var refreshControl: UIRefreshControl!
+  
   private let quantityChangeRelay = PublishRelay<InCartProduct>()
   private let deleteProductRelay = PublishRelay<InCartProduct>()
   private let onEditModeChangeSubject = ReplaySubject<Bool>.create(bufferSize: 1)
@@ -98,12 +100,11 @@ private extension CartController {
   func configureCollectionView() {
     collectionView.delegate = self
     collectionView.register(cellType: ProductCell.self)
+    
     let refreshControl = UIRefreshControl()
     refreshControl.tintColor = .blue
-    binder.bindReloadCart(refreshControl.rx.controlEvent(.valueChanged).asObservable())
-    binder.bindRefreshControlIsRefreshingProperty(refreshControl.rx.isRefreshing.asObserver())
-    
     collectionView.addSubview(refreshControl)
+    self.refreshControl = refreshControl
   }
   
   func setupBindings() {
@@ -122,6 +123,8 @@ private extension CartController {
     binder.bindEditButtonIsEnabledProperty(editButton.rx.isEnabled.asObserver())
     binder.bindEmptyCartLabelIsHiddenProperty(emptyCartLabel.rx.isHidden.asObserver())
     binder.bindTapOnCheckoutButton(checkoutButton.rx.tap.asObservable())
+    binder.bindReloadCart(refreshControl.rx.controlEvent(.valueChanged).asObservable())
+    binder.bindRefreshControlIsRefreshingProperty(refreshControl.rx.isRefreshing.asObserver())
   }
   
   func createDataSource() -> RxCollectionViewSectionedReloadDataSource<ProductSection> {
