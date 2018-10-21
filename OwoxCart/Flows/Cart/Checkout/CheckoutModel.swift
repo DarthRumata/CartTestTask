@@ -12,6 +12,8 @@ import Core
 
 protocol CheckoutModelInterface: class {
 
+  var products: Observable<[InCartProduct]> { get }
+  
 }
 
 class CheckoutModel {
@@ -25,5 +27,9 @@ class CheckoutModel {
 }
 
 extension CheckoutModel: CheckoutModelInterface {
-
+  
+  var products: Observable<[InCartProduct]> {
+    return productsSubject.asObservable()
+  }
+  
 }

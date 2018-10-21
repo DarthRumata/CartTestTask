@@ -42,7 +42,7 @@ private extension CheckoutController {
   }
 
   func setupBindings() {
-    // Bind data streams to views
+    binder.bindProductsTitlesLabel(checkoutListLabel.rx.text.asObserver())
   }
 
 }
