@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  OwoxCart
+
+  Created by Stas Kirichok on 17-10-2018.
+  Copyright © 2018 Stas Kirichok. All rights reserved.
+*/
+"buttons.add" = "Добавить";
+"buttons.edit" = "Редакт.";
+"buttons.done" = "Готово";
+"buttons.checkout" = "Оформить заказ";
+
+"currency.uah" = "грн";
+
+"cart.title" = "Корзина";
+"cart.empty_cart" = "Корзина пользователя пуста";
+"cart.summary" = "Итого";
+
+"checkout.title" = "Подтверждение заказа";

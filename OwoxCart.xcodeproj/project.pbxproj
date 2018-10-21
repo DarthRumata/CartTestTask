@@ -18,9 +18,6 @@
 		9232700721768E100044414B /* SwiftGen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92326FFF21768E100044414B /* SwiftGen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9232701D217693190044414B /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92327017217693190044414B /* Cart.storyboard */; };
 		9232701E217693190044414B /* CartFlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92327018217693190044414B /* CartFlowAssembly.swift */; };
-		9232701F217693190044414B /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92327019217693190044414B /* CartController.swift */; };
-		92327020217693190044414B /* CartBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9232701A217693190044414B /* CartBinder.swift */; };
-		92327021217693190044414B /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9232701B217693190044414B /* CartModel.swift */; };
 		92327022217693190044414B /* CartFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9232701C217693190044414B /* CartFlowCoordinator.swift */; };
 		9232702D217695B60044414B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9232702F217695B60044414B /* Localizable.strings */; };
 		92327034217696070044414B /* strings-custom.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 92327032217696070044414B /* strings-custom.stencil */; };
@@ -40,6 +37,21 @@
 		92AE29492177C2D600A75415 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 92AE29472177C2D600A75415 /* products.json */; };
 		92AE294C2177C36300A75415 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE294B2177C36300A75415 /* Product.swift */; };
 		92AE294E2177C42500A75415 /* ProductFileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE294D2177C42500A75415 /* ProductFileRepository.swift */; };
+		92AE29572177F87700A75415 /* df.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE29562177F87700A75415 /* df.swift */; };
+		92E16E59217B746C0074F4B0 /* InCartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16E58217B746C0074F4B0 /* InCartProduct.swift */; };
+		92E16E5B217B7B2D0074F4B0 /* InCartProductFileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E16E5A217B7B2D0074F4B0 /* InCartProductFileRepository.swift */; };
+		92E2A56A217B9834005D63CB /* BehaviorSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A569217B9834005D63CB /* BehaviorSubject.swift */; };
+		92E2A56D217C9288005D63CB /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 92E2A56F217C9288005D63CB /* Localizable.stringsdict */; };
+		92E2A572217C9FCE005D63CB /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A571217C9FCE005D63CB /* UIView+Corners.swift */; };
+		92E2A57A217D00AE005D63CB /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A575217D00AE005D63CB /* ProductCell.swift */; };
+		92E2A57B217D00AE005D63CB /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A576217D00AE005D63CB /* CartController.swift */; };
+		92E2A57C217D00AE005D63CB /* CartBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A577217D00AE005D63CB /* CartBinder.swift */; };
+		92E2A57D217D00AE005D63CB /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A578217D00AE005D63CB /* CartModel.swift */; };
+		92E2A57E217D00AE005D63CB /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E2A579217D00AE005D63CB /* ProductCell.xib */; };
+		92E2A582217D0169005D63CB /* CheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A57F217D0169005D63CB /* CheckoutController.swift */; };
+		92E2A583217D0169005D63CB /* CheckoutBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A580217D0169005D63CB /* CheckoutBinder.swift */; };
+		92E2A584217D0169005D63CB /* CheckoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A581217D0169005D63CB /* CheckoutModel.swift */; };
+		92E2A586217D0311005D63CB /* CartEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2A585217D0311005D63CB /* CartEvents.swift */; };
 		AD4DCE55126E655EBD0EE61B /* Pods_SwiftGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACCCF3885B7478628BD8C29 /* Pods_SwiftGen.framework */; };
 		B6884015D267EE5D1AC85EFC /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95A872450AB461EB9F53946 /* Pods_Core.framework */; };
 		E1C6D012282567B0DD655990 /* Pods_OwoxCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CB1D890490743D61E9A118 /* Pods_OwoxCart.framework */; };
@@ -98,17 +110,12 @@
 		92326FE021768AE40044414B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92326FEB21768B1F0044414B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92326FED21768B1F0044414B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		92326FEF21768B1F0044414B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92326FFF21768E100044414B /* SwiftGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9232700121768E100044414B /* SwiftGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGen.h; sourceTree = "<group>"; };
 		9232700221768E100044414B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92327017217693190044414B /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		92327018217693190044414B /* CartFlowAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartFlowAssembly.swift; sourceTree = "<group>"; };
-		92327019217693190044414B /* CartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
-		9232701A217693190044414B /* CartBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartBinder.swift; sourceTree = "<group>"; };
-		9232701B217693190044414B /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		9232701C217693190044414B /* CartFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartFlowCoordinator.swift; sourceTree = "<group>"; };
-		9232702E217695B60044414B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		92327032217696070044414B /* strings-custom.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-custom.stencil"; sourceTree = "<group>"; };
 		92327035217696CE0044414B /* BaseBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBinder.swift; sourceTree = "<group>"; };
 		92327038217696F20044414B /* NavigationDisposePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDisposePool.swift; sourceTree = "<group>"; };
@@ -126,6 +133,25 @@
 		92AE29472177C2D600A75415 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		92AE294B2177C36300A75415 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		92AE294D2177C42500A75415 /* ProductFileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFileRepository.swift; sourceTree = "<group>"; };
+		92AE29532177F46B00A75415 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92AE29542177F47800A75415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92AE29562177F87700A75415 /* df.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = df.swift; sourceTree = "<group>"; };
+		92AE29582177FCAA00A75415 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92E16E58217B746C0074F4B0 /* InCartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InCartProduct.swift; sourceTree = "<group>"; };
+		92E16E5A217B7B2D0074F4B0 /* InCartProductFileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InCartProductFileRepository.swift; sourceTree = "<group>"; };
+		92E2A569217B9834005D63CB /* BehaviorSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorSubject.swift; sourceTree = "<group>"; };
+		92E2A56E217C9288005D63CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		92E2A570217C928B005D63CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		92E2A571217C9FCE005D63CB /* UIView+Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
+		92E2A575217D00AE005D63CB /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		92E2A576217D00AE005D63CB /* CartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
+		92E2A577217D00AE005D63CB /* CartBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartBinder.swift; sourceTree = "<group>"; };
+		92E2A578217D00AE005D63CB /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		92E2A579217D00AE005D63CB /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		92E2A57F217D0169005D63CB /* CheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutController.swift; sourceTree = "<group>"; };
+		92E2A580217D0169005D63CB /* CheckoutBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBinder.swift; sourceTree = "<group>"; };
+		92E2A581217D0169005D63CB /* CheckoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutModel.swift; sourceTree = "<group>"; };
+		92E2A585217D0311005D63CB /* CartEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEvents.swift; sourceTree = "<group>"; };
 		9F3CB1180A6A3C416C4C201A /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		A95A872450AB461EB9F53946 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E63BF54F598E188BCFD0D4 /* Pods-SwiftGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGen/Pods-SwiftGen.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +237,8 @@
 		92326FDE21768AE40044414B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				92E2A571217C9FCE005D63CB /* UIView+Corners.swift */,
+				92E2A569217B9834005D63CB /* BehaviorSubject.swift */,
 				92AE294A2177C35A00A75415 /* Entities */,
 				923270462176980C0044414B /* DomainServices */,
 				923270592176980C0044414B /* InfrastructureServices */,
@@ -268,7 +296,9 @@
 				92327027217695420044414B /* Constants */,
 				9232700121768E100044414B /* SwiftGen.h */,
 				9232702F217695B60044414B /* Localizable.strings */,
+				92E2A56F217C9288005D63CB /* Localizable.stringsdict */,
 				9232700221768E100044414B /* Info.plist */,
+				92AE29562177F87700A75415 /* df.swift */,
 			);
 			path = SwiftGen;
 			sourceTree = "<group>";
@@ -276,11 +306,11 @@
 		92327016217693190044414B /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				92E2A574217D00AE005D63CB /* Cart */,
+				92E2A573217D00AE005D63CB /* Checkout */,
 				92327017217693190044414B /* Cart.storyboard */,
 				92327018217693190044414B /* CartFlowAssembly.swift */,
-				92327019217693190044414B /* CartController.swift */,
-				9232701A217693190044414B /* CartBinder.swift */,
-				9232701B217693190044414B /* CartModel.swift */,
+				92E2A585217D0311005D63CB /* CartEvents.swift */,
 				9232701C217693190044414B /* CartFlowCoordinator.swift */,
 			);
 			path = Cart;
@@ -307,8 +337,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = Fonts;
-			path = Base.lproj/Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		92327030217696070044414B /* Stencils */ = {
@@ -332,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				923270512176980C0044414B /* DomainServicesAssembly.swift */,
-				92AE294D2177C42500A75415 /* ProductFileRepository.swift */,
 			);
 			path = DomainServices;
 			sourceTree = "<group>";
@@ -340,6 +368,8 @@
 		923270522176980C0044414B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				92AE294D2177C42500A75415 /* ProductFileRepository.swift */,
+				92E16E5A217B7B2D0074F4B0 /* InCartProductFileRepository.swift */,
 				923270552176980C0044414B /* RepositoriesAssembly.swift */,
 			);
 			path = Repositories;
@@ -358,8 +388,31 @@
 			isa = PBXGroup;
 			children = (
 				92AE294B2177C36300A75415 /* Product.swift */,
+				92E16E58217B746C0074F4B0 /* InCartProduct.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		92E2A573217D00AE005D63CB /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				92E2A57F217D0169005D63CB /* CheckoutController.swift */,
+				92E2A580217D0169005D63CB /* CheckoutBinder.swift */,
+				92E2A581217D0169005D63CB /* CheckoutModel.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		92E2A574217D00AE005D63CB /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				92E2A575217D00AE005D63CB /* ProductCell.swift */,
+				92E2A576217D00AE005D63CB /* CartController.swift */,
+				92E2A577217D00AE005D63CB /* CartBinder.swift */,
+				92E2A578217D00AE005D63CB /* CartModel.swift */,
+				92E2A579217D00AE005D63CB /* ProductCell.xib */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		C80D61BE291D90DE0DD576AA /* Frameworks */ = {
@@ -409,8 +462,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				92326FE321768AE40044414B /* PBXTargetDependency */,
 				9232700521768E100044414B /* PBXTargetDependency */,
+				92326FE321768AE40044414B /* PBXTargetDependency */,
 			);
 			name = OwoxCart;
 			productName = OwoxCart;
@@ -442,7 +495,7 @@
 			buildConfigurationList = 9232700821768E100044414B /* Build configuration list for PBXNativeTarget "SwiftGen" */;
 			buildPhases = (
 				30FCB52539068F8EFF70FC20 /* [CP] Check Pods Manifest.lock */,
-				9232700D2176904D0044414B /* SwiftGen */,
+				92AE29512177F24800A75415 /* SwiftGen */,
 				92326FFA21768E100044414B /* Headers */,
 				92326FFB21768E100044414B /* Sources */,
 				92326FFC21768E100044414B /* Frameworks */,
@@ -486,6 +539,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 92326FBA217681160044414B;
@@ -507,6 +561,7 @@
 			files = (
 				92AE29492177C2D600A75415 /* products.json in Resources */,
 				92326FF721768B200044414B /* LaunchScreen.storyboard in Resources */,
+				92E2A57E217D00AE005D63CB /* ProductCell.xib in Resources */,
 				9232701D217693190044414B /* Cart.storyboard in Resources */,
 				92326FF621768B200044414B /* Assets.xcassets in Resources */,
 				92AE29482177C2D600A75415 /* cart.json in Resources */,
@@ -526,6 +581,7 @@
 			files = (
 				9232702D217695B60044414B /* Localizable.strings in Resources */,
 				92327034217696070044414B /* strings-custom.stencil in Resources */,
+				92E2A56D217C9288005D63CB /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +642,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which ${PODS_ROOT}/SwiftLint/swiftlint >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9232700D2176904D0044414B /* SwiftGen */ = {
+		92AE29512177F24800A75415 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -602,7 +658,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTGEN=$PODS_ROOT/SwiftGen/bin/swiftgen\n\nif which $SWIFTGEN >/dev/null; then\n$SWIFTGEN storyboards -t swift4 \"$PROJECT_DIR/OwoxCart\" --output \"$PROJECT_DIR/OwoxCart/Common/Constants/Storyboards.swift\" --param module=\"OwoxCart\"\n$SWIFTGEN xcassets -t swift4 \"$PROJECT_DIR/OwoxCart/Resources/Assets.xcassets\" --output \"$PROJECT_DIR/OwoxCart/Common/Constants/Images.swift\"\n$SWIFTGEN fonts \"$PROJECT_DIR/OwoxCart/Resources/Fonts\" --output \"$PROJECT_DIR/OwoxCart/Common/Constants/Fonts.swift\" -t swift4\n$SWIFTGEN strings \"$PROJECT_DIR/SwiftGen/En.lproj/Localizable.strings\" -p \"$PROJECT_DIR/SwiftGen/Stencils/strings-custom.stencil\" --output \"$PROJECT_DIR/SwiftGen/Constants/Texts.swift\"\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
+			shellScript = "SWIFTGEN=$PODS_ROOT/SwiftGen/bin/swiftgen\n\nif which $SWIFTGEN >/dev/null; then\n$SWIFTGEN\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
 		};
 		C86E24F6C523A1DFF4A16748 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -622,6 +678,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+				"${BUILT_PRODUCTS_DIR}/ValueStepper/ValueStepper.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -637,6 +694,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValueStepper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,17 +727,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92327021217693190044414B /* CartModel.swift in Sources */,
 				92327036217696CE0044414B /* BaseBinder.swift in Sources */,
 				92326FC7217681170044414B /* AppDelegate.swift in Sources */,
 				92327022217693190044414B /* CartFlowCoordinator.swift in Sources */,
+				92E2A57A217D00AE005D63CB /* ProductCell.swift in Sources */,
 				9232703F217697130044414B /* Storyboards.swift in Sources */,
+				92E2A584217D0169005D63CB /* CheckoutModel.swift in Sources */,
+				92E2A586217D0311005D63CB /* CartEvents.swift in Sources */,
+				92E2A582217D0169005D63CB /* CheckoutController.swift in Sources */,
+				92E2A57B217D00AE005D63CB /* CartController.swift in Sources */,
 				9232703B217696F20044414B /* NavigationCoordinator.swift in Sources */,
-				92327020217693190044414B /* CartBinder.swift in Sources */,
-				9232701F217693190044414B /* CartController.swift in Sources */,
+				92E2A57C217D00AE005D63CB /* CartBinder.swift in Sources */,
+				92E2A57D217D00AE005D63CB /* CartModel.swift in Sources */,
 				92327043217697880044414B /* DependencyHelper.swift in Sources */,
 				9232703E217697130044414B /* Images.swift in Sources */,
 				9232701E217693190044414B /* CartFlowAssembly.swift in Sources */,
+				92E2A583217D0169005D63CB /* CheckoutBinder.swift in Sources */,
 				9232703A217696F20044414B /* NavigationDisposePool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,12 +751,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E16E59217B746C0074F4B0 /* InCartProduct.swift in Sources */,
 				9232708B2176980C0044414B /* FileService.swift in Sources */,
 				9232707E2176980C0044414B /* RepositoriesAssembly.swift in Sources */,
 				9232707B2176980C0044414B /* DomainServicesAssembly.swift in Sources */,
+				92E16E5B217B7B2D0074F4B0 /* InCartProductFileRepository.swift in Sources */,
 				9232708C2176980C0044414B /* InfrastructureServicesAssembly.swift in Sources */,
+				92E2A56A217B9834005D63CB /* BehaviorSubject.swift in Sources */,
 				92327045217697980044414B /* Assembler.swift in Sources */,
 				92AE294E2177C42500A75415 /* ProductFileRepository.swift in Sources */,
+				92E2A572217C9FCE005D63CB /* UIView+Corners.swift in Sources */,
 				92AE294C2177C36300A75415 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923270412176971D0044414B /* Texts.swift in Sources */,
+				92AE29572177F87700A75415 /* df.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +798,7 @@
 		92326FEE21768B1F0044414B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				92326FEF21768B1F0044414B /* Base */,
+				92AE29542177F47800A75415 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -738,9 +806,19 @@
 		9232702F217695B60044414B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9232702E217695B60044414B /* en */,
+				92AE29532177F46B00A75415 /* en */,
+				92AE29582177FCAA00A75415 /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		92E2A56F217C9288005D63CB /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92E2A56E217C9288005D63CB /* en */,
+				92E2A570217C928B005D63CB /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -749,7 +827,9 @@
 		92326FD3217681180044414B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -810,7 +890,9 @@
 		92326FD4217681180044414B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -866,9 +948,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01C95D676203593D7CB7ADBD /* Pods-OwoxCart.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6A7Q4BNBM9;
 				INFOPLIST_FILE = "$(SRCROOT)/OwoxCart/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -885,9 +968,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FBA0CC29A9DDA1394B748E2 /* Pods-OwoxCart.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6A7Q4BNBM9;
 				INFOPLIST_FILE = "$(SRCROOT)/OwoxCart/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -979,6 +1063,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MODULE_NAME = 11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirichok.SwiftGen;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1010,6 +1095,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MODULE_NAME = 11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirichok.SwiftGen;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

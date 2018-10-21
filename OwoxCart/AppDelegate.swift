@@ -11,6 +11,7 @@ import Swinject
 import SwinjectAutoregistration
 import Core
 import EventsTree
+import SwiftGen
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

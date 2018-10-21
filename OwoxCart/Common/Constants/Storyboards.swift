@@ -1,3 +1,4 @@
+// swiftlint:disable all
 // Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
 
 // swiftlint:disable sorted_imports
@@ -7,22 +8,43 @@ import UIKit
 // swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
 
-protocol StoryboardType {
+// MARK: - Storyboard Scenes
+
+// swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
+internal enum StoryboardScene {
+  internal enum Cart: StoryboardType {
+    internal static let storyboardName = "Cart"
+
+    internal static let cartController = SceneType<CartController>(storyboard: Cart.self, identifier: "CartController")
+
+    internal static let checkoutController = SceneType<CheckoutController>(storyboard: Cart.self, identifier: "CheckoutController")
+  }
+  internal enum LaunchScreen: StoryboardType {
+    internal static let storyboardName = "LaunchScreen"
+
+    internal static let initialScene = InitialSceneType<UIKit.UIViewController>(storyboard: LaunchScreen.self)
+  }
+}
+// swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
+
+// MARK: - Implementation Details
+
+internal protocol StoryboardType {
   static var storyboardName: String { get }
 }
 
-extension StoryboardType {
+internal extension StoryboardType {
   static var storyboard: UIStoryboard {
     let name = self.storyboardName
     return UIStoryboard(name: name, bundle: Bundle(for: BundleToken.self))
   }
 }
 
-struct SceneType<T: Any> {
-  let storyboard: StoryboardType.Type
-  let identifier: String
+internal struct SceneType<T: UIViewController> {
+  internal let storyboard: StoryboardType.Type
+  internal let identifier: String
 
-  func instantiate() -> T {
+  internal func instantiate() -> T {
     let identifier = self.identifier
     guard let controller = storyboard.storyboard.instantiateViewController(withIdentifier: identifier) as? T else {
       fatalError("ViewController '\(identifier)' is not of the expected class \(T.self).")
@@ -31,44 +53,15 @@ struct SceneType<T: Any> {
   }
 }
 
-struct InitialSceneType<T: Any> {
-  let storyboard: StoryboardType.Type
+internal struct InitialSceneType<T: UIViewController> {
+  internal let storyboard: StoryboardType.Type
 
-  func instantiate() -> T {
+  internal func instantiate() -> T {
     guard let controller = storyboard.storyboard.instantiateInitialViewController() as? T else {
       fatalError("ViewController is not of the expected class \(T.self).")
     }
     return controller
   }
 }
-
-protocol SegueType: RawRepresentable { }
-
-extension UIViewController {
-  func perform<S: SegueType>(segue: S, sender: Any? = nil) where S.RawValue == String {
-    let identifier = segue.rawValue
-    performSegue(withIdentifier: identifier, sender: sender)
-  }
-}
-
-// swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
-enum StoryboardScene {
-  enum Cart: StoryboardType {
-    static let storyboardName = "Cart"
-
-    static let initialScene = InitialSceneType<OwoxCart.CartController>(storyboard: Cart.self)
-
-    static let cartController = SceneType<OwoxCart.CartController>(storyboard: Cart.self, identifier: "CartController")
-  }
-  enum LaunchScreen: StoryboardType {
-    static let storyboardName = "LaunchScreen"
-
-    static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
-  }
-}
-
-enum StoryboardSegue {
-}
-// swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 
 private final class BundleToken {}

@@ -1,19 +1,21 @@
 //
-//  CartController.swift
+//  CheckoutController.swift
 //  OwoxCart
 //
-//  Created by Stas Kirichok on 17-10-2018.
+//  Created by Stas Kirichok on 21-10-2018.
 //  Copyright (c) 2018 Stas Kirichok. All rights reserved.
-//
 //
 
 import UIKit
 import RxSwift
+import SwiftGen
 
-class CartController: UIViewController, DisposableFlowKeeper {
+class CheckoutController: UIViewController, DisposableFlowKeeper {
 
-  var binder: CartBinder!
+  var binder: CheckoutBinder!
 
+  @IBOutlet private weak var checkoutListLabel: UILabel!
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
 
@@ -33,10 +35,10 @@ class CartController: UIViewController, DisposableFlowKeeper {
 
 }
 
-private extension CartController {
+private extension CheckoutController {
 
   func configureView() {
-    // Configure static props of views
+    title = L10n.Checkout.title
   }
 
   func setupBindings() {

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Unbox
 
-class ProductFileRepository {
+public class ProductFileRepository {
   
   private let fileService: FileService
   
@@ -18,18 +18,10 @@ class ProductFileRepository {
     self.fileService = fileService
   }
   
-  func getInitialProducts() -> Single<[Product]> {
-    return loadProductsFromFile(withName: "cart")
-  }
-  
-  func getAllProducts() -> Single<[Product]> {
-    return loadProductsFromFile(withName: "products")
-  }
-  
-  private func loadProductsFromFile(withName fileName: String) -> Single<[Product]> {
+  public func getAllProducts() -> Single<[Product]> {
     return Single.create { [unowned self] observer in
       do {
-        let data = try self.fileService.readTextFileInBundle(withName: fileName, fileType: FileType.json)
+        let data = try self.fileService.readTextFileInBundle(withName: "products", fileType: FileType.json)
         let products: [Product] = try unbox(data: data)
         observer(.success(products))
       } catch let error {

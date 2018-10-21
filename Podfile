@@ -18,6 +18,7 @@ target 'OwoxCart' do
   pod 'RxDataSources', '~> 3.0'
   pod 'RxViewController', '~> 0.3'
   pod 'SwiftLint', '~> 0.25'
+  pod 'ValueStepper', '~> 1.5'
   
 end
 
@@ -32,6 +33,20 @@ end
 target 'SwiftGen' do
   use_frameworks!
   
-  pod 'SwiftGen', '~> 5.2.1'
+  pod 'SwiftGen', '~> 6.0.2'
   
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == 'ValueStepper'
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4'
+      end
+    end
+    target.build_configurations.each do |config|
+      config.build_settings.delete('CODE_SIGNING_ALLOWED')
+      config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
+  end
 end

@@ -13,7 +13,8 @@ import SwinjectAutoregistration
 class RepositoriesAssembly: Assembly {
   
   func assemble(container: Container) {
-
+    container.autoregister(ProductFileRepository.self, initializer: ProductFileRepository.init)
+    container.autoregister(InCartProductFileRepository.self, initializer: InCartProductFileRepository.init)
   }
   
 }

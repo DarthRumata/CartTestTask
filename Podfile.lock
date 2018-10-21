@@ -20,12 +20,13 @@ PODS:
   - RxViewController (0.3.0):
     - RxCocoa (>= 4.0.0)
     - RxSwift (>= 4.0.0)
-  - SwiftGen (5.2.1)
+  - SwiftGen (6.0.2)
   - SwiftLint (0.27.0)
   - Swinject (2.5.0)
   - SwinjectAutoregistration (2.5.0):
     - Swinject (~> 2.5)
   - Unbox (3.0.0)
+  - ValueStepper (1.5)
 
 DEPENDENCIES:
   - EventsTree (~> 1.0)
@@ -35,11 +36,12 @@ DEPENDENCIES:
   - RxOptional (~> 3.5)
   - RxSwift (~> 4.1)
   - RxViewController (~> 0.3)
-  - SwiftGen (~> 5.2.1)
+  - SwiftGen (~> 6.0.2)
   - SwiftLint (~> 0.25)
   - Swinject (~> 2.5)
   - SwinjectAutoregistration (~> 2.5)
   - Unbox (~> 3.0)
+  - ValueStepper (~> 1.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -57,6 +59,7 @@ SPEC REPOS:
     - Swinject
     - SwinjectAutoregistration
     - Unbox
+    - ValueStepper
 
 SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
@@ -68,12 +71,13 @@ SPEC CHECKSUMS:
   RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   RxViewController: 203510707e73dd95f147f0c387710e3ec80d2b0f
-  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
+  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectAutoregistration: 0502a16e5f5baf181be80dc9510e0efa29130485
   Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
+  ValueStepper: e84d21a2ce62a7975df8b222c7273d6810f7e78c
 
-PODFILE CHECKSUM: 95fb84b26bff02fc6ec7c5ce08c342ebfac545bc
+PODFILE CHECKSUM: 952c7fca543328c70e83e44ceff874e56ee118b8
 
 COCOAPODS: 1.5.3

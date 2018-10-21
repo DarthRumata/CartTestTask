@@ -5,3 +5,17 @@
   Created by Stas Kirichok on 17-10-2018.
   Copyright © 2018 Stas Kirichok. All rights reserved.
 */
+"buttons.add" = "Add";
+"buttons.edit" = "Edit";
+"buttons.done" = "Done";
+"buttons.checkout" = "Checkout";
+
+"currency.uah" = "UAH";
+
+"cart.title" = "Cart";
+"cart.empty_cart" = "User cart is empty";
+"cart.summary" = "Summary";
+
+"summary.quantity_text" = "(%ld quantity_text)";
+
+"checkout.title" = "Checkout";

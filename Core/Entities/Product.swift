@@ -9,19 +9,15 @@
 import Foundation
 import Unbox
 
-struct Product {
+public struct Product: Unboxable {
   
-  let identifier: Double
-  let title: String
-  let price: Float
-  let oldPrice: Float?
-  let image: URL
+  public let identifier: Double
+  public let title: String
+  public let price: Float
+  public let oldPrice: Float?
+  public let image: URL
   
-}
-
-extension Product: Unboxable {
-  
-  init(unboxer: Unboxer) throws {
+  public init(unboxer: Unboxer) throws {
     identifier = try unboxer.unbox(key: "id")
     title = try unboxer.unbox(key: "title")
     price = try unboxer.unbox(key: "price")

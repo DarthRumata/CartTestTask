@@ -29,7 +29,9 @@ class CartFlowCoordinator: NavigationFlow {
   func makeFlow() -> UIViewController {
     let controller: CartController = resolver~>
     root = controller
-    return root
+    let navigation = UINavigationController(rootViewController: controller)
+    
+    return navigation
   }
 
 }
@@ -37,7 +39,17 @@ class CartFlowCoordinator: NavigationFlow {
 private extension CartFlowCoordinator {
 
   func handleEvents() {
-
+    eventNode.addHandler { [weak self] (event: CartEvents.OpenCheckout) in
+      self?.openCheckout(with: event.products)
+    }
+  }
+  
+  func openCheckout(with products: [InCartProduct]) {
+    let controller: CheckoutController = resolver~>
+    let model = resolver.resolve(CheckoutModelInterface.self, argument: products)!
+    let binder = resolver.resolve(CheckoutBinder.self, argument: model)
+    controller.binder = binder
+    root.navigationController!.pushViewController(controller, animated: true)
   }
 
 }

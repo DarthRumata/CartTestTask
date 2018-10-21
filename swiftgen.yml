@@ -1,0 +1,25 @@
+strings:
+  inputs: SwiftGen/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: SwiftGen/Constants/Texts.swift
+      params: 
+        publicAccess: true
+fonts:
+  inputs: OwoxCart/Resources/Fonts
+  outputs:
+    - templateName: swift4
+      output: OwoxCart/Common/Constants/Fonts.swift
+xcassets:
+  - inputs: OwoxCart/Resources/Assets.xcassets
+    outputs:
+      - templateName: swift4
+        output: OwoxCart/Common/Constants/Images.swift
+ib:
+  inputs: OwoxCart
+  outputs:
+    - templateName: scenes-swift4
+      output: OwoxCart/Common/Constants/Storyboards.swift
+      params:
+        module: OwoxCart
+        ignoreTargetModule: true
