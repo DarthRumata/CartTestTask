@@ -98,6 +98,12 @@ private extension CartController {
   func configureCollectionView() {
     collectionView.delegate = self
     collectionView.register(cellType: ProductCell.self)
+    let refreshControl = UIRefreshControl()
+    refreshControl.tintColor = .blue
+    binder.bindReloadCart(refreshControl.rx.controlEvent(.valueChanged).asObservable())
+    binder.bindRefreshControlIsRefreshingProperty(refreshControl.rx.isRefreshing.asObserver())
+    
+    collectionView.addSubview(refreshControl)
   }
   
   func setupBindings() {

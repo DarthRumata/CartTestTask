@@ -99,6 +99,13 @@ class CartBinder: BaseBinder {
       .disposed(by: disposeBag)
   }
   
+  func bindRefreshControlIsRefreshingProperty(_ observer: AnyObserver<Bool>) {
+    model.isReloadingCart
+      .filter { $0 == false }
+      .bind(to: observer)
+      .disposed(by: disposeBag)
+  }
+  
   // To Model
   
   func bindTapOnCheckoutButton(_ observable: Observable<Void>) {
@@ -128,6 +135,12 @@ class CartBinder: BaseBinder {
   func bindTapOnDeleteProductButton(_ observable: Observable<InCartProduct>) {
     observable
       .bind(to: model.onDeleteProduct)
+      .disposed(by: disposeBag)
+  }
+  
+  func bindReloadCart(_ observable: Observable<Void>) {
+    observable
+      .bind(to: model.onReloadCart)
       .disposed(by: disposeBag)
   }
   

@@ -21,12 +21,14 @@ protocol CartModelInterface: class {
   
   var products: Observable<[InCartProduct]> { get }
   var cartMode: Observable<CartMode> { get }
+  var isReloadingCart: Observable<Bool> { get }
   
   var onProductQuantityChange: AnyObserver<InCartProduct> { get }
   var onAddProduct: AnyObserver<Void> { get }
   var onChangeCartMode: AnyObserver<Void> { get }
   var onCheckout: AnyObserver<Void> { get }
   var onDeleteProduct: AnyObserver<InCartProduct> { get }
+  var onReloadCart: AnyObserver<Void> { get }
   
 }
 
@@ -45,6 +47,7 @@ class CartModel {
   private let cartProductsSubject = BehaviorSubject<[InCartProduct]>(value: [])
   private let allProductsSubject = BehaviorSubject<[Product]>(value: [])
   private let cartModeSubject = BehaviorSubject<CartMode>(value: .view)
+  private let isReloadingCartSubject = BehaviorSubject<Bool>(value: false)
   private let disposeBag = DisposeBag()
   
   private let productQuantityChangeHandler = PublishSubject<InCartProduct>()
@@ -52,18 +55,23 @@ class CartModel {
   private let changeCartModeHandler = PublishSubject<Void>()
   private let checkoutHandler = PublishSubject<Void>()
   private let deleteProductHandler = PublishSubject<InCartProduct>()
+  private let reloadCartHandler = PublishSubject<Void>()
   
   init(dependencies: Dependencies) {
     self.dependencies = dependencies
     
     handleActions()
-    loadProducts()
+    loadInitialCart()
   }
   
 }
 
 extension CartModel: CartModelInterface {
-
+  
+  var isReloadingCart: Observable<Bool> {
+    return isReloadingCartSubject.asObservable()
+  }
+  
   var cartMode: Observable<CartMode> {
     return cartModeSubject.asObservable()
   }
@@ -92,11 +100,15 @@ extension CartModel: CartModelInterface {
     return deleteProductHandler.asObserver()
   }
   
+  var onReloadCart: AnyObserver<Void> {
+    return reloadCartHandler.asObserver()
+  }
+  
 }
 
 private extension CartModel {
   
-  func loadProducts() {
+  func loadInitialCart() {
     dependencies.inCartProductRepository.getCartProducts()
       .subscribe(onSuccess: { [weak self] (products) in
         self?.cartProductsSubject.onNext(products)
@@ -112,6 +124,7 @@ private extension CartModel {
     handleChangeCartMode()
     handleDeleteProduct()
     handleCheckout()
+    handleReloadCart()
   }
   
   func handleProductQuantityChange() {
@@ -178,6 +191,16 @@ private extension CartModel {
       .subscribe(onNext: { [unowned self] _ in
         let event = CartEvents.OpenCheckout(products: self.cartProductsSubject.unsafeValue())
         self.dependencies.eventNode.raise(event: event)
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  func handleReloadCart() {
+    reloadCartHandler
+      .subscribe(onNext: { [unowned self] _ in
+        self.isReloadingCartSubject.onNext(true)
+        self.loadInitialCart()
+        self.isReloadingCartSubject.onNext(false)
       })
       .disposed(by: disposeBag)
   }

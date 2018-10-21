@@ -17,13 +17,13 @@
 			<key>one</key>
 			<string>%d product</string>
 			<key>two</key>
-			<string></string>
+			<string>%d products</string>
 			<key>few</key>
-			<string></string>
+			<string>%d products</string>
 			<key>many</key>
 			<string>%d products</string>
 			<key>other</key>
-			<string></string>
+			<string>%d products</string>
 		</dict>
 	</dict>
 </dict>
